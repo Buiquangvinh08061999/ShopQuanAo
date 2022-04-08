@@ -10,4 +10,4 @@
 + Thư viện khác 
 + FontAwesome
 
-#link Case: https://buiquangvinh08061999.github.io/ShopAoQuan/
+#link Case: https://buiquangvinh08061999.github.io/ShopQuanAo/

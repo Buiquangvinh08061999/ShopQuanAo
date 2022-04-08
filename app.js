@@ -18,16 +18,38 @@ function addGioHang(productImg, productThea, productStrong) {
     let kiemtraGioiHan = document.querySelectorAll("tbody tr");
     for (let i = 0; i < kiemtraGioiHan.length; i++) {
         let tenThea = document.querySelectorAll(".title")
-        if (tenThea[i].innerHTML == productThea) {
+        console.log(tenThea)
+
+        if(tenThea[i].dataset.name == productThea) {
             alert("Sản phẩm đã có trong giỏ hàng, bạn vui lòng chọn số lượng!")
             return;
         }
+
+        // if (tenThea[i].innerHTML == productThea) {
+        //     alert("Sản phẩm đã có trong giỏ hàng, bạn vui lòng chọn số lượng!")
+        //     return;
+        // }
     }
     // let addThetr = document.createElement("tr")
 
     let kiemtraTbody = document.querySelector("tbody")
     kiemtraTbody.append(addThetr)
-    let addAll = '<tr> <td style="display: flex; align-items: center;  margin-left: -12px; "><img src="' + productImg + '" style="width: 150px;" alt=""><span class="title">' + productThea + '</span>  </td> <td><span><strong class="strong-strong">' + productStrong + '</strong>$</span></td>   <td><input type="number" oninput="myFunciton()"  style="width: 40px; outline: none;" value="1" min="1"></td>   <td style="cursor: pointer;"> <i class="far fa-trash-alt" style="font-size: 25px;"></i></td></tr>'
+    let addAll = `
+            <tr> 
+                <td style="display: flex; align-items: center;  margin-left: -12px; ">
+                    <img src="${productImg}" style="width: 150px;" alt="">
+                    <span class="title" data-name='${productThea}'>${productThea}</span>  
+                </td> 
+                <td>
+                    <span><strong class="strong-strong">${productStrong}</strong>$</span>
+                </td>   
+                <td>
+                    <input type="number" oninput="myFunciton()"  style="width: 40px; outline: none;" value="1" min="1">
+                </td>   
+                <td style="cursor: pointer;"> 
+                    <i class="far fa-trash-alt" style="font-size: 25px;"></i>
+                </td>
+            </tr>`
     addThetr.innerHTML = addAll
 
     // let kiemtraGioiHan = document.querySelectorAll("tbody tr");
