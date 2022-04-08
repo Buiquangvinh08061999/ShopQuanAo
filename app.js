@@ -1,9 +1,68 @@
+class Product {
+    constructor (id, name, price, image) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.image = image;
+    }
+}
+
+let products = [
+    new Product(1, 'Áo Thun HOMEBLACK-VARSITYYY', 119, 'ao1.webp'),
+    new Product(2, 'Áo Thun HOMEBLACK-VARSITYB', 99, 'ao2.webp'),
+    new Product(3, 'Áo Thun HOMEBLACK-VARSITYC', 129, 'ao3.webp'),
+    new Product(4, 'Áo Thun HOMEBLACK-VARSITYCD', 129, 'ao4.webp'),
+    new Product(5, 'Áo Thun HOMERED-VARSITYCFFF', 189, 'ao5.webp'),
+    new Product(6, 'Áo Thun HOMEORIN-VARSITYCG', 119, 'ao6.webp'),
+    new Product(7, 'Áo Thun HOMEBLUE-VARSITYCH', 179, 'ao7.webp'),
+    new Product(8, 'Áo Thun HOMERED-VARSITYCJJJ', 119, 'ao8.webp'),
+    new Product(9, 'Áo BOMBERBLACK-VARSITYKKK', 329, 'aovip1.webp'),
+    new Product(10, 'Áo BOMBERBLUE-VARSITYLLL', 329, 'aovip2.webp'),
+    new Product(11, 'Áo BOMBERBLACK-VARSITYZ', 219, 'aovip3.webp'),
+    new Product(12, 'Áo BOMBERWHITE-VARSITYXX', 239, 'aovip4.webp'),
+    new Product(13, 'Quần STRAP BLACK-CREAMMM1', 189, 'quan1.webp'),
+    new Product(14, 'Quần STRAP BLACK-CREAMMM2', 199, 'quan2.webp'),
+    new Product(15, 'Quần STRAP WHITE-CREAMMM1', 239, 'quan3.webp'),
+    new Product(16, 'Quần STRAP BLACK-CREAMMM3', 199, 'quan4.webp'),
+
+]
+
+
+let boxTopCenter = document.getElementById('boxTopCenter');
+
+let str = '';
+for (let i = 0; i < products.length; i++) {
+    str += `
+        <div class="boxAnhtong" >
+            <div class="boxAnhphu">
+                <img src="imager/${products[i].image}" alt="">
+            </div>
+            <a href="">${products[i].name}</a>
+            <span><strong>${products[i].price}</strong>$</span>
+            <button >Thêm vào giỏ hàng</button>
+        </div>
+    `;
+}
+
+boxTopCenter.innerHTML = str;
+
+function checkExist (arr, id) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].id === id) {
+          return true;
+        }
+    }
+    return false;
+}
+
+
 //PHẦN 1: Gọi ra 3 giá trị thẻ a(tên), thẻ img, thẻ strong(tiền)
 let kiemtraButton = document.querySelectorAll("button")
 kiemtraButton.forEach(function (button, index) {
     button.addEventListener("click", function (event) {
         let btnItem = event.target
         let product = btnItem.parentElement
+        // let productId = product.dataset.id
         let productImg = product.querySelector("img").src
         let productThea = product.querySelector("a").innerText
         let productStrong = product.querySelector("strong").innerText
@@ -18,11 +77,12 @@ function addGioHang(productImg, productThea, productStrong) {
     let kiemtraGioiHan = document.querySelectorAll("tbody tr");
     for (let i = 0; i < kiemtraGioiHan.length; i++) {
         let tenThea = document.querySelectorAll(".title")
-        console.log(tenThea)
 
-        if(tenThea[i].dataset.name == productThea) {
-            alert("Sản phẩm đã có trong giỏ hàng, bạn vui lòng chọn số lượng!")
-            return;
+        if (tenThea.length > 0) {
+            if(tenThea[i].dataset.name == productThea) {
+                alert("Sản phẩm đã có trong giỏ hàng, bạn vui lòng chọn số lượng!")
+                return;
+            }
         }
 
         // if (tenThea[i].innerHTML == productThea) {
@@ -31,6 +91,10 @@ function addGioHang(productImg, productThea, productStrong) {
         // }
     }
     // let addThetr = document.createElement("tr")
+
+    // if (checkExist(products, productId)) {
+
+    // }
 
     let kiemtraTbody = document.querySelector("tbody")
     kiemtraTbody.append(addThetr)
@@ -65,8 +129,6 @@ function addGioHang(productImg, productThea, productStrong) {
 
     //PHẦN4: GỌI HÀM deleteCart() xóa remove lại sản phẩm
     deleteCart()
-
-
 
 }
 
