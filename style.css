@@ -1,0 +1,230 @@
+body{
+    /* Lắp đầy thanh boxtop  */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.boxtop{
+    /*Bước 1:Đầy màn hình, màu xám, cao 50px, dùng thuộc tính:position: fixed để thanh cuộn cố định theo(Tiêu đề)*/
+    float: left; 
+    width: 100%;
+    height: 50px;
+    background-color:#708090;
+    /* position: fixed; */
+    /* background-size: cover: cố định cái ảnh vào khung; */
+   
+}
+.boxlogo{
+    /*Bước 2:Đầy màn hình, Logo ra giữa khối cao 90px, có gạch chân dưới 1px solid
+    padding-top: 10px: Hạ Logo xuống ngang với khối(Tiêu đề);*/
+    float: left; 
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px #ccc solid;
+    text-align: center;
+    padding-top: 10px, 0px ; 
+    margin-top: 10px;
+    
+}
+
+.boxmenu{
+    /*Bước 3:Đầy màn hình, cao 50px(Tiêu đề)*/
+    float: left; 
+    width: 100%;
+    height: 50px;
+    background-color:  #708090;
+}
+.boxtopcenter{
+    /*Bước 6: Cho tất cả chữ nằm giữa, và cho auto tự động canh lề(Tiêu đề) */
+    width: 70%;
+    margin: 0 auto;
+    
+}
+.boxtopleft{
+    /*Bước6: Cho dòng Hotline về trái(Tiêu đề)*/
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+}
+.boxtopright{
+    /*Bước6: Cho dòng thẻ a về phải.(Tiêu đề) */
+    float: right;
+    height: 50px;
+    line-height: 50px;
+}
+.boxtopright a {
+    /*Bước6: Thẻ Cha truy xuất đến thẻ con a, và khoảng cách 20px (Tiêu đề)*/
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+}
+
+
+
+article{
+    /*Bước 4:Đầy màn hình, độ cao 700px(Nội dung)*/
+    float: left; 
+    width: 100%;
+    min-height: 700px;
+    
+}
+article{
+    /*Bước 8: căn chỉnh ảnh (Nội dung) gọn trong Tiêu Đề và Kết Bài 
+    margin-top 10px 0px: Ngĩa là Trên 10px phải 0px Dưới 10px trái 0px ;*/
+    margin: 20px 0px;
+}
+.boxAnhtong{
+    /*Bước7:Đưa ảnh lên tỉ lệ 25%(Nội dung)  
+    Tỉ lệ dòng ảnh thấp xuống 20px*/
+    float: left;
+    width: 25%;
+    margin-bottom: 20px;
+    cursor: pointer;
+    
+}
+.boxAnhtong a{
+    /*Bước 7:Truy xuất thẻ a chỉnh sửa(Nội dung)*/
+    text-decoration: none;
+    color: #808080
+}
+.boxAnhtong a:hover{
+    /*Bước 7:Truy xuất thẻ a để dùng thuộc tính a:display: ;hover chuyển màu(Nội dung)*/
+    color: #4169E1
+}
+
+.boxAnhtong button{
+     /*Bước 7:Truy xuất thẻ button để dùng thuộc tính(Nội dung)
+     cursor: pointer: Hình bàn tay khi di vào,
+     transition: all 0.7s ease làm chậm hình ảnh đẹp 
+     display: block: cho button xuống, magin: 0 auto : căn giữa button ra*/
+    margin-top: 10px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.7s ease;
+    display: block;
+    margin: 0 auto;
+
+}
+.boxAnhtong button:hover{
+    /*Bước 7 */
+    background-color: tomato;
+  
+}
+
+
+.boxAnhtong span{
+     /*Bước 7:Truy xuất thẻ span để thay màu(Nội dung)*/
+    color: #9370DB; 
+    margin-left: 120px;
+}
+
+.boxAnhphu{
+    /*Bước 7:Truy xuất đối tượng Toàn cục chỉnh kích thước(Nội dung)*/
+    width: 100%;
+}
+
+.boxAnhphu img{
+    /*Bước 7:Truy xuất đối tượng ảnh chỉnh kích thước(Nội dung)*/
+    width: 100%;
+  
+}
+.boxAnhphu :hover{
+    /*Bước7: hover vào ảnh sẽ zoom to lên 1 1.
+    transition: all 0.8s ease: làm mượt hơn hình ảnh*/
+    transform: scale(1.06);
+    transition: all 0.8s ease;
+   
+}
+
+
+
+
+/* ---------------------------------Table----------------------------------- */
+.cart{
+     /*Bước 8:Truy xuất đối tượng ảnh chỉnh kích thước(Nội dung)*/
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+}
+.cart h2{
+     /*Bước 8:Chỉnh h2 xuống(Nội dung)*/
+    margin-bottom: 40px;
+    color: #2F4F4F;
+    font-size: 30px;
+    
+}
+.cart table{
+    /*Bước 8 quan trọng. dàn các ô td điều ra màn hình */
+    width: 100%;
+}
+.cart table thead tr th:first-child{
+     /*Bước 8 quan trọng: chia điều thẻ th sang trái = với ảnh ở phía dưới */
+    text-align: left;
+}
+.cart table thead tr th{
+    /*Bước 8: làm to phông chữ thẻ th ra */
+    font-size: 30px;
+    color: #2F4F4F
+}
+.cart table thead tr th:last-child{
+     /*Bước 8 quan trọng: chia điều thẻ th sang phải // với td */
+    text-align: right;
+}
+.cart table  tr td:last-child{
+    /* Bước 8 : chia điều các thẻ td // với th */
+    text-align: right;
+}
+.cart table tr td{
+    /*Bước 8: tạo đường viền phía dưới các thẻ th */
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+}
+
+
+/* ------------------Phần 2. boxmenu> boxmidcenter */
+ul{
+    /* Bước1:Căn lề thẳng dòng, thẳng vs hotline:099.. */ 
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    /*Bước1 Bỏ dấu chấm tròn ở thẻ <li>, cho thẻ thành 1 dòng thẳng, và tạo khoảng cách */
+    list-style-type:none;
+    float: left;
+    margin-left: 20px;
+   margin-top: 15px;
+}
+ul li a{ 
+    /*Bước1 In đậm thẻ a lên và bỏ gạch chân */
+    text-decoration: none;
+    color:white; 
+    font-weight:  bold;
+
+}
+ul li:hover{
+    background-color: tomato ;
+    transition: all 1s ease;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+footer{
+    /*Bước 5:Đầy màn hình, độ cao 100px(Kết Bài)*/
+    float: left; 
+    width: 100%;
+    height: 100px;
+    background-color: #333;
+}
+
